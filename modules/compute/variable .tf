@@ -2,6 +2,9 @@ variable "key_name" {
   type = string  
   default = "Mine-IT"
 }
+variable "instance_profile_id"{
+  type = string
+}
 variable "subnet_id" {
     type = string
 }

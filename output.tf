@@ -10,3 +10,6 @@ output "instance_id"{
 output "Security_group_id"{
     value = module.compute.security_group_id
 }
+output "s3"{
+    value = module.bucket.bucket
+}

@@ -9,6 +9,10 @@ variable "publicSubnet"{
     description = "Public Subnet CIDR"
 }
 
+variable "bucket_name"{
+  type = string
+  default = "mimeitdemobucket"
+}
 variable "key_name" {
   type = string
   default = "testingkey"

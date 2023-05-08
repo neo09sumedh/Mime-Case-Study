@@ -12,6 +12,7 @@ resource "aws_instance" "MineITInstance" {
   vpc_security_group_ids=[aws_security_group.Mine-IT_SG.id]
   associate_public_ip_address=true
   subnet_id=var.subnet_id
+  iam_instance_profile = var.instance_profile_id
   depends_on  = [aws_security_group.Mine-IT_SG]
    tags = {
     Name = "${local.app_name}-Instance"

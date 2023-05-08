@@ -3,7 +3,10 @@ module "network" {
     vpc_cidr = var.vpc_cidr
     publicSubnet = var.publicSubnet
 }
-
+module "bucket" {
+    source = "./modules/s3"
+    bucket_name = var.bucket_name
+}
 module "compute" {
     source = "./modules/compute"
     key_name = var.key_name
@@ -15,6 +18,7 @@ module "compute" {
     volume_size = var.volume_size
     ip_list = var.ip_list
     port_list = var.port_list
+    instance_profile_id = module.bucket.instance_profile_id
     vpc_id = module.network.vpc_id
 }
 
